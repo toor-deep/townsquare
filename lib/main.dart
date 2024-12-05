@@ -10,6 +10,7 @@ import 'package:townsquare/shared/state/app-theme/app_theme_cubit.dart';
 
 import 'core/routing.dart';
 import 'core/theme/app_theme.dart';
+import 'features/bottom_navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                   onGenerateRoute: generateRoute,
-                  home: kIsWeb ? const LeftSlider() :  HomeView(),);
+                  home: kIsWeb ? const LeftSlider() :  const BottomNavigationBarScreen(),);
             },
           ),
         ),

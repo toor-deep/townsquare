@@ -49,33 +49,35 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.only(top: 0, left: 0, right: 0),
-        child: SizedBox(
-          width: 632,
-          child: Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildRow(),
-                  const Text(
-                    "This Week in Estipona",
-                    style: AppTextStyles.heading,
-                  ),
-                  Spacing.hsm,
-                  _buildContainer(),
-                  Spacing.hsm,
-                  _searchBar(),
-                  Spacing.hsm,
-                  HomeViewListUi(
-                    onCategorySelected: updateSelectedCategory,
-                  ),
-                  HomeViewListItem(
-                    activities: getFilteredActivities(),
-                  )
-                ],
+        child: Row(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildRow(),
+                    const Text(
+                      "This Week in Estipona",
+                      style: AppTextStyles.heading,
+                    ),
+                    Spacing.hsm,
+                    _buildContainer(),
+                    Spacing.hsm,
+                    _searchBar(),
+                    Spacing.hsm,
+                    HomeViewListUi(
+                      onCategorySelected: updateSelectedCategory,
+                    ),
+                    HomeViewListItem(
+                      activities: getFilteredActivities(),
+                    )
+                  ],
+                ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
